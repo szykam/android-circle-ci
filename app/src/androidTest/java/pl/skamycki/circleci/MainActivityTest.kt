@@ -15,8 +15,14 @@ class MainActivityTest {
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun activityLaunched() {
+    fun check_hello_world_displayed() {
         onView(withText("Hello World!"))
+                .check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun failing_test() {
+        onView(withText("not existing text"))
                 .check(matches(isDisplayed()))
     }
 }
