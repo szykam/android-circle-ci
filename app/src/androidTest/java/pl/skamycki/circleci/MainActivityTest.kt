@@ -5,6 +5,7 @@ import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
 import android.support.test.espresso.matcher.ViewMatchers.withText
 import android.support.test.rule.ActivityTestRule
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 
@@ -21,6 +22,7 @@ class MainActivityTest {
     }
 
     @Test
+    @Ignore
     fun failing_test() {
         onView(withText("not existing text"))
                 .check(matches(isDisplayed()))
