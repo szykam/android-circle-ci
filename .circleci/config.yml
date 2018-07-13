@@ -40,7 +40,12 @@ jobs:
       - checkout
       - restore_cache:
           key: build-{{ .Environment.CIRCLE_SHA1 }}
-      - run: ./gradlew crashlyticsUploadDistributionRelease
+      - run:
+          name: Assemble release APK
+          command: ./gradlew assembleRelease
+      - run:
+          name: Upload to Beta
+          command: ./gradlew crashlyticsUploadDistributionRelease
 workflows:
   version: 2
   build-and-deploy:
