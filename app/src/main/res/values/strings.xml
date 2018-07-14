@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">CircleCi</string>
     <string name="crash">Crash</string>
     <string name="login">Login</string>
 </resources>
