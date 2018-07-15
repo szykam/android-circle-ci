@@ -41,6 +41,10 @@ android {
             dimension "stage"
             applicationIdSuffix ".beta"
         }
+
+        prod {
+            dimension "stage"
+        }
     }
 }
 
