@@ -72,9 +72,11 @@ workflows:
               only: develop
   build-and-deploy-beta:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: /^release.*/
       - deploy_beta:
-          type: approval
           requires:
             - build
   build-and-deploy-prod:
@@ -84,6 +86,5 @@ workflows:
             branches:
               only: master
       - deploy_beta:
-          type: approval
           requires:
             - build
