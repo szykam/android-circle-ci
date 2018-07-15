@@ -75,13 +75,15 @@ workflows:
       - build:
           filters:
             tags:
-              only: /.*/
+              only: /^v.*/
+            branches:
+              ignore: /.*/
       - deploy_beta:
           filters:
             tags:
               only: /^v.*/
             branches:
-              only: /^release.*/
+              ignore: /.*/
           requires:
             - build
   build-and-deploy-prod:
