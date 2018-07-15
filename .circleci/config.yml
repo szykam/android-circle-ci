@@ -72,12 +72,12 @@ workflows:
               only: develop
   build-and-deploy-beta:
     jobs:
-      - build:
+      - build
+      - deploy_beta:
+          type: approval
           filters:
             tags:
               only: /^release-.*/
-      - deploy_beta:
-          type: approval
           requires:
             - build
   build-and-deploy-prod:
