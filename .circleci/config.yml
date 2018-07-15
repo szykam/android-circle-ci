@@ -72,12 +72,7 @@ workflows:
               only: develop
   build-and-deploy-beta:
     jobs:
-      - build:
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
+      - build
       - deploy_beta:
           filters:
             tags:
