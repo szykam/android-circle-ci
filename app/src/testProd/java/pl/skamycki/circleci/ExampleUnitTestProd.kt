@@ -12,7 +12,5 @@ import org.junit.Assert.*
 class ExampleUnitTestProd {
 
     @Test
-    fun failingTestForProd() {
-        fail("Forced failing production test")
-    }
+    fun releaseOnlyTest() {}
 }
