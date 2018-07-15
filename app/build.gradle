@@ -40,10 +40,12 @@ android {
         beta {
             dimension "stage"
             applicationIdSuffix ".beta"
+            ext.betaDistributionGroupAliases = "development"
         }
 
         prod {
             dimension "stage"
+            ext.betaDistributionGroupAliases = "production"
         }
     }
 }
