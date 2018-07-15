@@ -77,7 +77,7 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /^release-.*/
+              only: /^v.*/
       - deploy_beta:
           type: approval
           requires:
