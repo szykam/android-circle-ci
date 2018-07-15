@@ -79,6 +79,9 @@ workflows:
             branches:
               only: /^release.*/
       - deploy_beta:
+          filters:
+            tags:
+              only: /^v.*/
           requires:
             - build
   build-and-deploy-prod:
