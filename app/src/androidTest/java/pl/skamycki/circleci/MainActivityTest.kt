@@ -17,14 +17,7 @@ class MainActivityTest {
 
     @Test
     fun check_hello_world_displayed() {
-        onView(withText("Hello World!"))
-                .check(matches(isDisplayed()))
-    }
-
-    @Test
-    @Ignore
-    fun failing_test() {
-        onView(withText("not existing text"))
+        onView(withText("Hello World!!"))
                 .check(matches(isDisplayed()))
     }
 }

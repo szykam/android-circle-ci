@@ -11,8 +11,8 @@ android {
         applicationId "pl.skamycki.circleci"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 5
-        versionName "0.1.3"
+        versionCode 10
+        versionName "0.2.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
                 FABRIC_API_KEY: "64b08e9bac9c936fc71187d12d64608ed9b2204c",
@@ -40,10 +40,12 @@ android {
         beta {
             dimension "stage"
             applicationIdSuffix ".beta"
+            ext.betaDistributionGroupAliases = "development"
         }
 
         prod {
             dimension "stage"
+            ext.betaDistributionGroupAliases = "production"
         }
     }
 }
