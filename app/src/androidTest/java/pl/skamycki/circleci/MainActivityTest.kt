@@ -20,11 +20,4 @@ class MainActivityTest {
         onView(withText("Hello World!"))
                 .check(matches(isDisplayed()))
     }
-
-    @Test
-    @Ignore
-    fun failing_test() {
-        onView(withText("not existing text"))
-                .check(matches(isDisplayed()))
-    }
 }
