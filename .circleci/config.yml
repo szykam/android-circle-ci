@@ -75,9 +75,7 @@ workflows:
       - build:
           filters:
             tags:
-              only: /^v.*/
-            branches:
-              only: /^release.*/
+              only: /.*/
       - deploy_beta:
           filters:
             tags:
