@@ -72,11 +72,16 @@ workflows:
               only: develop
   build-and-deploy-beta:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /^v.*/
       - deploy_beta:
           filters:
+            tags:
+              only: /^v.*/
             branches:
-              only: /release.*/
+              ignore: /.*/
           type: approval
           requires:
             - build
