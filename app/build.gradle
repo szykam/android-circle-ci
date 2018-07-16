@@ -21,9 +21,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../release-key.jks")
-            storePassword "password"
+            storePassword getEnv("RELEASE_KEY_PASSWORD")
             keyAlias "release"
-            keyPassword "password"
+            keyPassword getEnv("RELEASE_KEY_PASSWORD")
         }
     }
     buildTypes {
@@ -67,4 +67,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+def getEnv(String key) {
+    def envValue = System.getenv(key)
+    if (envValue != null) return envValue
+
+    try {
+        return project.property(key)
+    } catch (MissingPropertyException ignored) {
+        return ""
+    }
 }
